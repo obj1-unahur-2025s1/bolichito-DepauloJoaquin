@@ -1,0 +1,41 @@
+import bolichito.*
+import objetos.*
+import personas.*
+
+
+test " bolichito puede cambiar los objetos a objetos brillantes " {
+   bolichito.nuevoProductoVidriera(munieco) 
+  assert.that(bolichito.esBrillante())
+}
+
+test " bolichito no tiene objetos brillantes en la mano" {
+
+  assert.notThat(bolichito.esBrillante())
+
+}
+
+test "bolichito le puede ofrecer algo a Juan"{
+    
+  assert.that(bolichito.puedeOfrecerAlgoA_(juan))
+
+}
+
+test "bolichito esta equilibrado"{
+    
+  assert.that(bolichito.estaEquilibrado())
+
+
+}
+
+test "bolichito le puede ofrecer algo a Estefania"{
+    bolichito.nuevoProductoMostrador(remera)
+  assert.that(bolichito.puedeOfrecerAlgoA_(estefania))
+
+}
+
+
+test "bolichito no le puede ofrecer algo a Luisa"{
+    bolichito.nuevoProductoMostrador(remera)
+  assert.notThat(bolichito.puedeOfrecerAlgoA_(luisa))
+
+}

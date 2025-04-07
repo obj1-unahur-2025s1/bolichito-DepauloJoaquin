@@ -1,0 +1,44 @@
+import personas.*
+import objetos.*
+
+test "A Rosa le gusta la remera" {
+  assert.that(rosa.leGusta(remera))
+}
+
+test "A Rosa no le gusta la biblioteca" {
+  assert.notThat(rosa.leGusta(biblioteca))
+}
+
+test "A Rosa no le gusta un objeto que tenga un peso mayor a 2000 gramos " {
+    munieco.peso(4000) 
+    assert.notThat(rosa.leGusta(munieco))
+}
+
+test "A estefania le gustan objetos de color fuerte" {
+  placa.color(rojo)
+  assert.that(estefania.leGusta(placa))
+}
+
+test "A estefania no le gustan objetos de color que no sea fuerte" { 
+  assert.notThat(estefania.leGusta(munieco))
+}
+
+test "A luisa le gustan los objetos brillantes" { 
+  assert.that(luisa.leGusta(munieco))
+}
+
+
+test "A luisa no le gustan los objetos no brillantes" { 
+  assert.notThat(luisa.leGusta(pelota))
+}
+
+test "A juan le gustan los objetos con color no fuerte " { 
+  assert.that(juan.leGusta(pelota))
+}
+
+test "A juan no le gustan los objetos con peso menor a 1200 y  mayor a 1800 y un color no fuerte " { 
+   placa.peso(4000) 
+   placa.color(rojo)
+
+  assert.notThat(juan.leGusta(placa))
+}
